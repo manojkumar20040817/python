@@ -1,0 +1,62 @@
+lam.py
+1)print(11/0)
+2)print('11'+0)
+3)
+try:
+    num1= int(input("enter numerator:"))
+    num2= int(input("enter denominator:"))
+    output= num1/num2
+    print("Result:", output)
+except ZeroDivisionError:
+    print("Cannot divide by zero .......")
+4)
+(one try and 2 0r more except stmts)::
+try:
+    filename= input("Enter the file names: ")
+    file= open(filename, 'r')
+    number= int(file.readline())
+    print("Number from a file", number)
+    file.close()
+except FileNotFoundError:
+    print("File does not Exist .....")
+except ValueError:
+    print("File does not have an integer")
+except:
+    print("Unknown Error .....")
+
+mexe.py
+1)
+import math
+try:
+    num= int(input("Enter a number: "))
+    if num<0:
+        raise ValueError("Negative number .....")
+except ValueError:
+    print("Enter Positive number only")
+else: 
+    print("SquareRoot:", round(math.sqrt(num),4))
+2)
+import math
+try:
+    num= int(input("Enter a number: "))
+    print(num)
+    raise ValueError
+except:
+    print("Exception raised intentionally even no use .....")
+3)
+import datetime
+try:
+    x= int(input("Enter numerator:"))
+    y= int(input("Enter denominator:"))
+    print("Result:", x/y)
+except (ZeroDivisionError) as e:
+    ct= datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    txt= f"[{ct}] Error: {type(e)} \n"
+    with open("data.txt", 'a') as file:
+        file.write(txt)
+except (ValueError) as e:
+    ct= datetime.datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    txt= f"[{ct}] Error: {type(e)} \n"
+    with open("data.txt", 'a') as file:
+        file.write(txt)
+
